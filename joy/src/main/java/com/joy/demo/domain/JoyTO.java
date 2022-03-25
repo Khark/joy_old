@@ -8,13 +8,16 @@ import lombok.Getter;
 import lombok.Setter;
 
 
+
 @Data
+@Setter
+@Getter
+@Document(collation = "joy")
 public class JoyTO {
 
 	@Id
 	private String _id;
-	
 	private String extra1;
-	
-	
+	private String aa;
+	private String createdon;
 }
