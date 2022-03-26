@@ -12,7 +12,7 @@ import lombok.Setter;
 @Data
 @Setter
 @Getter
-@Document(collation = "joy")
+@Document(collection = "joy")
 public class JoyTO {
 
 	@Id
@@ -20,4 +20,8 @@ public class JoyTO {
 	private String extra1;
 	private String aa;
 	private String createdon;
+	
+	private String name;
+	private String memo;
+	
 }

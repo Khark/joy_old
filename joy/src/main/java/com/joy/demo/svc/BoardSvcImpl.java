@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -35,7 +36,7 @@ public class BoardSvcImpl implements BoardSvc {
 		Query query = new Query().addCriteria(Criteria.where("extra").is(extra));
 		return mongoTemplate.find(query, JoyTO.class);
 	}
-	
+//	@ConfigurationProperties("datasource-oracle")
 	public JoyTO insertEvent(JoyTO joy) { 
 		LocalDateTime now = LocalDateTime.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
