@@ -8,5 +8,5 @@ public interface BoardSvc {
 
 	public JoyTO getEvent(String _id) ;
 	public List<JoyTO> getEventList(String extra) ;
-	public JoyTO insertEvent(JoyTO joy) ;
+	public String insertEvent(JoyTO joy) ;
 }

@@ -37,7 +37,11 @@ public class JoyController {
 	public String writeFormPOST(@ModelAttribute("JoyTO") @Validated JoyTO joyto, Model model) {
 		String result="";
 
-		boardsvc.insertEvent(joyto);
+		if(boardsvc.insertEvent(joyto).equals("")) {
+			
+		}else {
+			
+		}
 		return result;
 	}
 	
@@ -46,4 +50,19 @@ public class JoyController {
 		
 		return "joy/viewForm";
 	}
+	
+	@GetMapping("listForm")
+	public String listForm(@ModelAttribute("JoyTO") @Validated JoyTO joyto, Model model) {
+		
+		return "joy/listForm";
+	}
+
+	
+	@PostMapping("listForm")
+	public String listFormPost(@ModelAttribute("JoyTO") @Validated JoyTO joyto, Model model) {
+		
+		return "joy/listForm";
+	}
+
+	
 }

@@ -13,6 +13,7 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.joy.demo.advice.RestException;
 import com.joy.demo.domain.JoyTO;
@@ -37,11 +38,19 @@ public class BoardSvcImpl implements BoardSvc {
 		return mongoTemplate.find(query, JoyTO.class);
 	}
 //	@ConfigurationProperties("datasource-oracle")
-	public JoyTO insertEvent(JoyTO joy) { 
-		LocalDateTime now = LocalDateTime.now();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-	 
-		joy.setCreatedon(now.format(formatter));
-		return mongoTemplate.insert(joy);
+	@Transactional
+	public String insertEvent(JoyTO joy) { 
+		String result = "ProcessSucess";
+		try {
+			LocalDateTime now = LocalDateTime.now();
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+			joy.setCreatedon(now.format(formatter));
+			mongoTemplate.insert(joy);
+		}catch (Exception e) {
+			result="ProcessFail";
+			e.printStackTrace();
+			// TODO: handle exception
+		}
+		return result;
 	}
 }
