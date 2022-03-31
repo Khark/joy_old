@@ -1,5 +1,8 @@
 package com.joy.demo.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.joy.demo.domain.JoyTO;
 import com.joy.demo.domain.JoyVO;
 import com.joy.demo.svc.BoardSvc;
+import com.joy.demo.svc.joy.JoySvc;
 
 @Controller
 @RequestMapping("/joy/*")
@@ -19,6 +23,9 @@ public class JoyController {
 
 	@Autowired
 	BoardSvc boardsvc;
+	
+	@Autowired
+	JoySvc joysvc;
 	
 	@GetMapping("main")
 	 public String main(Model model){
@@ -53,7 +60,9 @@ public class JoyController {
 	
 	@GetMapping("listForm")
 	public String listForm(@ModelAttribute("JoyTO") @Validated JoyTO joyto, Model model) {
-		
+		List<JoyVO> joyvo = new ArrayList<JoyVO>();
+		joyvo = joysvc.selectJoyList(joyto);
+		model.addAttribute("list", joyvo);
 		return "joy/listForm";
 	}
 
@@ -61,6 +70,9 @@ public class JoyController {
 	@PostMapping("listForm")
 	public String listFormPost(@ModelAttribute("JoyTO") @Validated JoyTO joyto, Model model) {
 		
+		List<JoyVO> joyvo = new ArrayList<JoyVO>();
+		joyvo = joysvc.selectJoyList(joyto);
+		model.addAttribute("list", joyvo);
 		return "joy/listForm";
 	}
 
