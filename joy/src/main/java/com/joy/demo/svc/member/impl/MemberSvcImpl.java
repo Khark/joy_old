@@ -17,6 +17,11 @@ public class MemberSvcImpl implements MemberSvc {
 	@Override
 	public memberEntity selectMember(Long memberno) {
 		// TODO Auto-generated method stub
+		
+		// 
+		
+		
+		//
 		return memberRepository.findById(memberno).orElseThrow(() -> 
 		new RestException(HttpStatus.NOT_FOUND, "Not found member"));
 	}
