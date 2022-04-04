@@ -1,4 +1,4 @@
-package com.joy.demo.domain.lagav;
+package com.joy.demo.domain.mongo.lagav;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

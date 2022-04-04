@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.joy.demo.advice.RestException;
-import com.joy.demo.domain.JoyTO;
+import com.joy.demo.domain.mongo.joy.JoyTO;
 
 @Service
 public class BoardSvcImpl implements BoardSvc {

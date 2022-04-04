@@ -1,4 +1,4 @@
-package com.joy.demo.domain;
+package com.joy.demo.domain.mongo.joy;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

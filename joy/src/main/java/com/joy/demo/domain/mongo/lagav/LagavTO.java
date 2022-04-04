@@ -1,4 +1,4 @@
-package com.joy.demo.domain.lagav;
+package com.joy.demo.domain.mongo.lagav;
 
 import javax.validation.constraints.NotEmpty;
 
@@ -23,15 +23,15 @@ public class LagavTO {
 	private String _id;
 	private String createdon;
 	
-	@NotEmpty
+	//@NotEmpty
 	private String createyear;
 	
 	private String serialno;
 	private String location;
 	private String location_num;
 	
-	@NotEmpty
+	//@NotEmpty
 	private String label;
-	@NotEmpty
-	private Integer order;
+	//@NotEmpty
+	private String order;
 }

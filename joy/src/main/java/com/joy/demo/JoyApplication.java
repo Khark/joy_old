@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.joy.demo.domain.JoyTO;
+import com.joy.demo.domain.mongo.joy.JoyTO;
 import com.joy.demo.svc.BoardSvcImpl;
 
 @SpringBootApplication

@@ -10,8 +10,8 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
-import com.joy.demo.domain.lagav.LagavTO;
-import com.joy.demo.domain.lagav.LagavVO;
+import com.joy.demo.domain.mongo.lagav.LagavTO;
+import com.joy.demo.domain.mongo.lagav.LagavVO;
 import com.joy.demo.svc.lagav.LagavSvc;
 
 @Service
@@ -29,7 +29,7 @@ public class LagavSvcImpl implements LagavSvc {
 		query.limit(1);
 		
 		template.findOne(query, LagavTO.class);
-		for(int i = 0 ; i < to.getOrder() ; i ++ ) {
+		for(int i = 0 ; i <Integer.parseInt(to.getOrder()) ; i ++ ) {
 			LocalDateTime now = LocalDateTime.now();
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 

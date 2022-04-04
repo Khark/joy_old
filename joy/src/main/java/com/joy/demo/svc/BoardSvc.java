@@ -2,7 +2,7 @@ package com.joy.demo.svc;
 
 import java.util.List;
 
-import com.joy.demo.domain.JoyTO;
+import com.joy.demo.domain.mongo.joy.JoyTO;
 
 public interface BoardSvc {
 

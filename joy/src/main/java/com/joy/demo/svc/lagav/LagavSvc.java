@@ -1,7 +1,7 @@
 package com.joy.demo.svc.lagav;
 
-import com.joy.demo.domain.lagav.LagavTO;
-import com.joy.demo.domain.lagav.LagavVO;
+import com.joy.demo.domain.mongo.lagav.LagavTO;
+import com.joy.demo.domain.mongo.lagav.LagavVO;
 
 public interface LagavSvc {
 

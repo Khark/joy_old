@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.joy.demo.domain.JoyTO;
-import com.joy.demo.domain.JoyVO;
+import com.joy.demo.domain.mongo.joy.JoyTO;
+import com.joy.demo.domain.mongo.joy.JoyVO;
 import com.joy.demo.svc.BoardSvc;
 import com.joy.demo.svc.joy.JoySvc;
 
