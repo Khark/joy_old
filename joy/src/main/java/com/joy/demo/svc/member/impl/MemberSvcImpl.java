@@ -20,7 +20,7 @@ public class MemberSvcImpl implements MemberSvc {
 		
 		// 
 		
-		
+		//asdfasdfa
 		//
 		return memberRepository.findById(memberno).orElseThrow(() -> 
 		new RestException(HttpStatus.NOT_FOUND, "Not found member"));
